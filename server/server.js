@@ -1,31 +1,44 @@
 'use strict';
 
+let express = require('express');
+let http = require('http');
+let path = require('path');
+let socketIO = require('socket.io');
 
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var socketIO = require('socket.io');
+let app = express();
+let server = http.Server(app);
+let io = socketIO(server);
+let fs = require('fs');
+let Tools = require('./Tools');
 
-var app = express();
-var server = http.Server(app);
-var io = socketIO(server);
-
-app.set('port', 54070);
+app.set('port', 8080);
 app.use('/static', express.static(__dirname + '/static'));
+
 
 // Routing
 app.get('/', function(request, response) {
-  response.sendFile(path.join(__dirname, 'index.html'));
+  response.sendFile(path.join(__dirname, 'input.html'));
 });
 
-// Starts the server.
-server.listen(54070, "0.0.0.0");
+app.post('', function(req, res) {
+  res.sendFile(path.join(__dirname, 'input.html'));
 
-// Add the WebSocket handlers
-io.on('connection', function(socket) {
 });
+
+server.listen(8080, "0.0.0.0");
 
 
 require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-  console.log('Starting sever at addr: '+add);
+  console.log('addr: '+add);
 })
+
+io.on('connection', function(socket) {
+  socket.on('data', function(data) {
+
+    //fs.open
+    fs.writeFile('data_' + Tools.getCurrentDate() + '.txt', data, function (err) {
+      if (err) throw err;
+      console.log('File saved');
+    });
+  });
+});
