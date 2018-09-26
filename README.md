@@ -9,16 +9,16 @@ The system should provide an easy way to check all transactions and be secure.
 **1. Blockchain**
 
 
-Each block will consist of information about a single transaction, these are: 
-  -name of person who spent some money
-  -index of transaction
-  -date of transaction
-  -cost of transaction
-  -balance
-  -place of transaction
-  -type of transaction
-  -next block
-  -hash of previous block
+Each block will consist of information about a single transaction, these are: <br>
+  -name of person who spent some money<br>
+  -index of transaction<br>
+  -date of transaction<br>
+  -cost of transaction<br>
+  -balance<br>
+  -place of transaction<br>
+  -type of transaction<br>
+  -next block<br>
+  -hash of previous block<br><br>
   
 **2. Server**
 
