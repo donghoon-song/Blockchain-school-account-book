@@ -1,1 +1,12 @@
 Here let's make a list of things we need to do.
+
+--------------------Blockchain--------------------<br><br>
+
+----------------------Web3------------------------<br><br>
+1. Finding a way to make a transaction on localhost and test it
+2. Getting information from the localhost and show it
+3. Finding a way to insert our web application url into QR code
+4. Finding a way to make QR code and studying the structure
+
+--------------------Web-Frontend------------------<br><br>
+1. Constructing a web application structure
