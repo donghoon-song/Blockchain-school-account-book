@@ -47,6 +47,10 @@
             text-align:center;
         }
     </style>
+
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -98,6 +102,54 @@
 	
 	 <li><div id="hi"><br></li>
 	<li> <div id="hi2"></li>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+							
+		<tr class="row100 head">
+			<th class="cell100 column1">Time</th>
+			<th class="cell100 column2">from</th>
+			<th class="cell100 column3">to</th>
+			<th class="cell100 column4">amount</th>
+			<th class="cell100 column5">index</th>
+		</tr>
+							</thead>
+						</table>
+					</div>
+					<table>
+						<tbody>
+		<tr class="row100 body">
+			<td class="cell100 column1">2018-10-18 17:55</td>
+			<td>총무부</td>
+			<td>동우마트</td>
+			<td>300,000</td>
+			<td>1</td>
+		</tr>
+		<tr class="row100 body">
+			<td>2018-10-20 18:56</td>
+			<td>도서부</td>
+			<td>경대서점</td>
+			<td>130,000</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>2018-10-23 13:36</td>
+			<td>홍보부</td>
+			<td>맘스터치</td>
+			<td>280,000</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>2018-10-14 14:21</td>
+			<td>총무부</td>
+			<td>부리또 익스프레스</td>
+			<td>450,000</td>
+			<td>4</td>
       <!--  <iFrame Name=mains width=1200px height=1000px Scrolling=no src="about.html"
          MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame>-->
     </div>
@@ -105,10 +157,10 @@
 
     <script>
 
-    	window.addEventListener('load', function() {
+    	//window.addEventListener('load', function() {
 
-	var Web3 = require('web3');
-	 window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/API_KEY"));
+	var Web3 = require("web3");
+	 web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/API_KEY"));
   // // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   // if (typeof web3 !== 'undefined') {
   //   // Use Mist/MetaMask's provider
@@ -121,7 +173,7 @@
   // }
   // // Now you can start your app & access web3 freely:
   // showAccounts();
-});
+//});
 
     // web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 
@@ -414,7 +466,7 @@
 
 	var KNUInstance = KNU.at("0x42579d4badf45cedfa2184870d49480f71433834");
 
-    var wallet = web3.eth.getAccounts(function(e,r){
+/*    var wallet = web3.eth.getAccounts(function(e,r){
         console.log(r);
     });
     console.log(wallet);
@@ -423,7 +475,7 @@
 	web3.eth.getAccounts(function(e,r){
 		document.getElementById('accounts').innerHTML = r;
 	})
-}
+}*/
 
 function showBalances(){
 	var wallet1 = accounts[0];
@@ -434,7 +486,7 @@ function showBalances(){
 
 	var list = coin1 + '<br>'+ coin2 + '<br>';
 
-	document.getElementById('balances').innerHTML=list;
+	document.getElementById('h1').innerHTML=list;
 }
 
 function sendTransaction(){
