@@ -1,0 +1,12 @@
+eth.accounts
+eth.getBalance(personl.eth.accounts[0])
+eth.getBalance(personal.eth.accounts[0])
+eth.getBalance(personal.eth.account[0])
+eth.getBalance(personal.listAccounts[0])
+miner.start(1)
+eth.coinbase
+eth.getBalance(listAccounts[0])
+eth.getBalance(personal.listAccounts[0])
+miner.stop()
+miner.stop(1)
+eth.getBalance(personal.listAccounts[0])
