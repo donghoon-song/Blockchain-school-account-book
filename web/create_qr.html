@@ -28,17 +28,19 @@
             <input id="address" type="text"  style="width:50%" /><br />
             <button onClick="createWallet()">Create Wallet</button><br/>
             <br>
-            <input id="text" type="text"  style="width:50%" /><br />
             <button onclick="makeCode()">Generate</button>
             <br>
             <div id="qrcode" style="width:100px; height:100px; margin-top:30px; margin-left:500px"></div>
             <script type="text/javascript">
+                var Web3 = require("web3");
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
                 var qrcode = new QRCode(document.getElementById("qrcode"), {
                     width : 200,
                     height : 200
                 });
                 function makeCode () {
-                    var elText = document.getElementById("text");
+                    var elText = document.getElementById("address");
                     if (!elText.value) {
                         alert("Input a text");
                         elText.focus();
@@ -48,17 +50,22 @@
                 }
                 function createWallet(){
                     
-                    var wallet = "0x08297DAFf692a44ED2d2683b3F57F609606C237E"
-                    document.getElementById('address').value=wallet;
+                    var password;
+                    var input = prompt("Please enter your password");
+                    if (input==null || input==""){
+                        password="invalid password"
+                    }
+                    else{
+                        password=input;
+                    }
+                    // web3.eth.personal.newAccount(password).then(console.log);
+                    var newAccount = web3.personal.newAccount(password);
+                    var length = web3.eth.accounts.length-1;
+                    console.log(web3.eth.accounts);
+                    document.getElementById("address").value=web3.eth.accounts[length];
                 }
             </script>
 
-            <script>
-                var Web3 = require("web3");
-                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-                var account = web3.eth.accounts[0];
-                console.log(account);
-            </script>
         </div>
 
     </body>
