@@ -33,8 +33,10 @@
             <div id="qrcode" style="width:100px; height:100px; margin-top:30px; margin-left:500px"></div>
             <script type="text/javascript">
                 var Web3 = require("web3");
-                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545",{timeout:20000, headers:[{name:'Access-Control-Allow-Credentials', value:true}]}));
+                //web3.var={timeout:20000, headers:[{name:"Access-Control-Allow-Origin", value:"*"}]};
+                //web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/1eb664857f43421a8aad2450e1e5d324"));
+                //let web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io'));
                 var qrcode = new QRCode(document.getElementById("qrcode"), {
                     width : 200,
                     height : 200

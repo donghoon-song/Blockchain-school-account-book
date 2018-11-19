@@ -10,3 +10,7 @@ eth.getBalance(personal.listAccounts[0])
 miner.stop()
 miner.stop(1)
 eth.getBalance(personal.listAccounts[0])
+eth.accounts
+admin.startRPC("175.120.198.177","8545","*")
+admin.startRPC(175.120.198.177,8545,*)
+admin.startRPC("175.120.198.177",8545)
