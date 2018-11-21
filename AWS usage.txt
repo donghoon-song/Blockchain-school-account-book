@@ -1,8 +1,0 @@
-ssh -i knucoin.pem ubuntu@ec2-54-147-166-74.compute-1.amazonaws.com
-
-geth --datadir ./data --rpc --rpccorsdomain="*" --rpcaddr "172.31.80.5" --rpcapi "db, web3, eth, personal" --nat "any" --networkid 1994 console
-
-ec2-54-147-166-74.compute-1.amazonaws.com
-
-public ip : http://54.147.166.74/
-private ip : 172.31.80.5
