@@ -3,7 +3,9 @@ AWS usage
 
 
 public DNS : ec2-54-147-166-74.compute-1.amazonaws.com
+
 public ip : http://54.147.166.74/
+
 private ip : 172.31.80.5
 
 
