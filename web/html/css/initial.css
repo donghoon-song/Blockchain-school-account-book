@@ -1,0 +1,12 @@
+body
+{
+    background: #ececec;
+}
+.initial
+{
+    position:relative;
+    top:33%;
+    width:33%;
+    text-align:center;
+    margin:0px auto;
+}

@@ -1,0 +1,25 @@
+.rec_menu
+{
+    background:#2c2826;
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+}
+.title{
+    display:inline-block;
+    width:95%;
+    padding-bottom:0px;
+    text-align:left;
+}
+.rec_menu ul
+{
+    list-style:none;
+    text-align:center;
+}
+.rec_menu ul li
+{
+    display:inline-block
+}
+#sign_set{
+    float:right;
+}

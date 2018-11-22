@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" charset="utf-8"/>
+    <script type="text/javascript" src="createQR/src/jquery.min.js"></script>
+    <script type="text/javascript" src="createQR/src/qrcode.js"></script>
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script type="text/javascript" src="./web3/bower_components/web3/dist/web3.min.js"></script>
+    <title>WALLET :: KNU COIN</title>
+    <style>
+    
+    .contents
+    {
+        float:left;
+        width:100%;
+        margin:0 auto;
+        padding-top : 50px;
+        text-align:center;
+    }
+</style>
+</head>
+<body>
+    <div class="contents" margin-left:500px>
+        <!-- <iFrame Name=mains width=1200px height=1000px Scrolling=no 
+            MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame> -->    
+            <input id="address" type="text"  style="width:50%" /><br />
+            <button onClick="createWallet()">Create Wallet</button><br/>
+            <br>
+            <button onclick="makeCode()">Generate</button>
+            <br>
+            <div id="qrcode" style="width:100px; height:100px; margin-top:30px; margin-left:500px"></div>
+            <script type="text/javascript">
+                var Web3 = require("web3");
+                web3 = new Web3(new Web3.providers.HttpProvider("http://52.207.216.102:8545"));
+                //web3.var = {timeout:20000, headers:[{name:"Access-Control-Allow-Origin", value:"*"}]};
+                // web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/1eb664857f43421a8aad2450e1e5d3e4"));
+                //let web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io'));
+
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    width : 200,
+                    height : 200
+                });
+                function makeCode () {
+                    var elText = document.getElementById("address");
+                    if (!elText.value) {
+                        alert("Input a text");
+                        elText.focus();
+                        return;
+                    }
+                    qrcode.makeCode(elText.value);
+                }
+                function createWallet(){
+                    
+                    var password;
+                    var input = prompt("Please enter your password");
+                    if (input==null || input==""){
+                        password="invalid password"
+                    }
+                    else{
+                        password=input;
+                    }
+                    // web3.eth.personal.newAccount(password).then(console.log);
+                    var newAccount = web3.personal.newAccount(password);
+                    var length = web3.eth.accounts.length-1;
+                    console.log(web3.eth.accounts);
+                    document.getElementById("address").value=web3.eth.accounts[length];
+                }
+            </script>
+
+        </div>
+
+    </body>
+    </html>
