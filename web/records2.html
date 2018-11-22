@@ -2,165 +2,177 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
-    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
-    <script type="text/javascript" src="./web3/bower_components/web3/dist/web3.min.js"></script>
-    <title>RECORDS :: KNU COIN</title>
-    <style>
-        .home
-        {
-            float:right;
-            width:100%;
-            padding-top:20px;
-            padding-right:80px;
-            text-align:right;
-        }
-        .title
-        {
-            float:left;
-            width:100%;
-             margin:0 auto;
-            text-align:center;
-        }
-        .rec_menu
-        {
-            float:left;
-            width:100%;
-            margin:0 auto;
-            text-align:center;
-        }
-        .rec_menu ul
-        {
-            list-style:none;
-        }
-        .rec_menu ul li
-        {
-            display:inline-block;
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+	<script type="text/javascript" src="./web3/bower_components/web3/dist/web3.min.js"></script>
+	<title>RECORDS :: KNU COIN</title>
+	<style>
+	.home
+	{
+		float:right;
+		width:100%;
+		padding-top:20px;
+		padding-right:80px;
+		text-align:right;
+	}
+	.title
+	{
+		float:left;
+		width:100%;
+		margin:0 auto;
+		text-align:center;
+	}
+	.rec_menu
+	{
+		float:left;
+		width:100%;
+		margin:0 auto;
+		text-align:center;
+	}
+	.rec_menu ul
+	{
+		list-style:none;
+	}
+	.rec_menu ul li
+	{
+		display:inline-block;
 
-        }
-        .contents
-        {
-            float:left;
-            width:100%;
-            margin:0 auto;
-            text-align:center;
-        }
-    </style>
+	}
+	.contents
+	{
+		float:left;
+		width:100%;
+		margin:0 auto;
+		text-align:center;
+	}
+</style>
 
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <span class="home">
-         <a href="knu_coin.html">
-            <img src="images/main/gotomain.png" alt="gotoMain">
-        </a>
-    </span>
-    <div class="banner">
-        <div class="title">
-            <h1>
-                <a href="records.html">
-                    <img src="images/records/records_title.png" alt="KNU RECORDS">
-                </a>
-            </h1>
-           
-        </div>
-        <div class="rec_menu">
-            <ul>
-                <li id="about">
-                   <!-- <a target=mains href="http://m.naver.com".html">-->
-                        <img src="images/records/about.png" alt="ABOUT">
-                    </a>
-                </li>
-                <li id="search record">
-                    <!--<a target=mains href="http://m.daum.net">-->
-                        <img src="images/records/search_records.png" alt="SEARCH RECORD">
-                    </a>
-                </li>
-                <li id="receipt">
-                   <!-- <a target=mains href="http://m.naver.com">-->
-                        <img src="images/records/receipt.png" alt="RECEIPT">
-                    </a>
-                </li>
-                <li id="satisfaction">
-                   <!-- <a target=mains href="http://m.daum.net">-->
-                        <img src="images/records/satisfaction.png" alt="SATISFACTION">
-                    </a>
-                </li>
-                <li id="QNA">
-                   <!-- <a target=mains href="qna.html">-->
-                        <img src="images/records/qna.png" alt="Q&A">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="contents">
-	
-	 <li><div id="hi"><br></li>
-	<li> <div id="hi2"></li>
+	<span class="home">
+		<a href="knu_coin.html">
+			<img src="images/main/gotomain.png" alt="gotoMain">
+		</a>
+	</span>
+	<div class="banner">
+		<div class="title">
+			<h1>
+				<a href="records.html">
+					<img src="images/records/records_title.png" alt="KNU RECORDS">
+				</a>
+			</h1>
 
-	<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-							
-		<tr class="row100 head">
-			<th class="cell100 column1">Time</th>
-			<th class="cell100 column2">from</th>
-			<th class="cell100 column3">to</th>
-			<th class="cell100 column4">amount</th>
-			<th class="cell100 column5">index</th>
-		</tr>
-							</thead>
-						</table>
-					</div>
-					<table>
-						<tbody>
-		<tr class="row100 body">
-			<td class="cell100 column1">2018-10-18 17:55</td>
-			<td>총무부</td>
-			<td>동우마트</td>
-			<td>300,000</td>
-			<td>1</td>
-		</tr>
-		<tr class="row100 body">
-			<td>2018-10-20 18:56</td>
-			<td>도서부</td>
-			<td>경대서점</td>
-			<td>130,000</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>2018-10-23 13:36</td>
-			<td>홍보부</td>
-			<td>맘스터치</td>
-			<td>280,000</td>
-			<td>3</td>
-		</tr>
-		<tr>
-			<td>2018-10-14 14:21</td>
-			<td>총무부</td>
-			<td>부리또 익스프레스</td>
-			<td>450,000</td>
-			<td>4</td>
+		</div>
+		<div class="rec_menu">
+			<ul>
+				<li id="about">
+					<!-- <a target=mains href="http://m.naver.com".html">-->
+						<img src="images/records/about.png" alt="ABOUT">
+					</a>
+				</li>
+				<li id="search record">
+					<!--<a target=mains href="http://m.daum.net">-->
+						<img src="images/records/search_records.png" alt="SEARCH RECORD">
+					</a>
+				</li>
+				<li id="receipt">
+					<!-- <a target=mains href="http://m.naver.com">-->
+						<img src="images/records/receipt.png" alt="RECEIPT">
+					</a>
+				</li>
+				<li id="satisfaction">
+					<!-- <a target=mains href="http://m.daum.net">-->
+						<img src="images/records/satisfaction.png" alt="SATISFACTION">
+					</a>
+				</li>
+				<li id="QNA">
+					<!-- <a target=mains href="qna.html">-->
+						<img src="images/records/qna.png" alt="Q&A">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="contents">
+
+		<li><div id="hi"><br></li>
+			<li> <div id="hi2"></li>
+
+				<div class="limiter">
+					<div class="container-table100">
+						<div class="wrap-table100">
+							<div class="table100 ver1 m-b-110">
+								<div class="table100-head">
+									<table>
+										<!--테이블 헤더-->
+										<thead>
+
+											<tr class="row100 head">
+												<th class="cell100 column1">Time</th>
+												<th class="cell100 column2">from</th>
+												<th class="cell100 column3">to</th>
+												<th class="cell100 column4">amount</th>
+												<th class="cell100 column5">index</th>
+											</tr>
+										</thead>
+                                    </table>
+                                    <table>
+										<!--테이블 헤더-->
+										<tbody id = "my_tbody"></tbody>
+									</table>
+								</div>
+
+									<!--
+									<tbody>
+										<tr class="row100 body">
+											<td class="cell100 column1">2018-10-18 17:55</td>
+											<td>총무부</td>
+											<td>동우마트</td>
+											<td>300,000</td>
+											<td>1</td>
+										</tr>
+										<tr class="row100 body">
+											<td>2018-10-20 18:56</td>
+											<td>도서부</td>
+											<td>경대서점</td>
+											<td>130,000</td>
+											<td>2</td>
+										</tr>
+										<tr>
+											<td>2018-10-23 13:36</td>
+											<td>홍보부</td>
+											<td>맘스터치</td>
+											<td>280,000</td>
+											<td>3</td>
+										</tr>
+										<tr>
+											<td>2018-10-14 14:21</td>
+											<td>총무부</td>
+											<td>부리또 익스프레스</td>
+											<td>450,000</td>
+											<td>4</td>
+										-->
       <!--  <iFrame Name=mains width=1200px height=1000px Scrolling=no src="about.html"
-         MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame>-->
-    </div>
-</body>
+      	MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame>-->
+      </div>
+  </body>
 
-    <script>
+  <script>
 
     	//window.addEventListener('load', function() {
 
-	var Web3 = require("web3");
-	 web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/API_KEY"));
+    		var Web3 = require('web3');
+    		var web3 = new Web3(new Web3.providers.HttpProvider());
+    		var version = web3.version.api;
+    		var API = 'https://api-ropsten.etherscan.io/api?module=account&action=tokentx&contractaddress=0x42579d4badf45cedfa2184870d49480f71433834&address=0xf7cb0Fd4e158b86c561b2a9D053Af87639079396&page=1&offset=100&sort=asc&apikey=YourApiKeyToken';
+    		var time, from, to, amout;
+    		var index = 0;
   // // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   // if (typeof web3 !== 'undefined') {
   //   // Use Mist/MetaMask's provider
@@ -178,293 +190,330 @@
     // web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 
     var KNU = web3.eth.contract([
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_spender",
-				"type": "address"
-			},
-			{
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"name": "spender",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "Approval",
-		"type": "event"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_spender",
-				"type": "address"
-			},
-			{
-				"name": "_subtractedValue",
-				"type": "uint256"
-			}
-		],
-		"name": "decreaseApproval",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_spender",
-				"type": "address"
-			},
-			{
-				"name": "_addedValue",
-				"type": "uint256"
-			}
-		],
-		"name": "increaseApproval",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "SimpleToken",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_to",
-				"type": "address"
-			},
-			{
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_from",
-				"type": "address"
-			},
-			{
-				"name": "_to",
-				"type": "address"
-			},
-			{
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_owner",
-				"type": "address"
-			},
-			{
-				"name": "_spender",
-				"type": "address"
-			}
-		],
-		"name": "allowance",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"name": "balance",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "decimals",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "INITIAL_SUPPLY",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-]);
+    {
+    	"anonymous": false,
+    	"inputs": [
+    	{
+    		"indexed": true,
+    		"name": "from",
+    		"type": "address"
+    	},
+    	{
+    		"indexed": true,
+    		"name": "to",
+    		"type": "address"
+    	},
+    	{
+    		"indexed": false,
+    		"name": "value",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "Transfer",
+    	"type": "event"
+    },
+    {
+    	"constant": false,
+    	"inputs": [
+    	{
+    		"name": "_spender",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_value",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "approve",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "bool"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    },
+    {
+    	"anonymous": false,
+    	"inputs": [
+    	{
+    		"indexed": true,
+    		"name": "owner",
+    		"type": "address"
+    	},
+    	{
+    		"indexed": true,
+    		"name": "spender",
+    		"type": "address"
+    	},
+    	{
+    		"indexed": false,
+    		"name": "value",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "Approval",
+    	"type": "event"
+    },
+    {
+    	"constant": false,
+    	"inputs": [
+    	{
+    		"name": "_spender",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_subtractedValue",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "decreaseApproval",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "bool"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    },
+    {
+    	"constant": false,
+    	"inputs": [
+    	{
+    		"name": "_spender",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_addedValue",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "increaseApproval",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "bool"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    },
+    {
+    	"constant": false,
+    	"inputs": [],
+    	"name": "SimpleToken",
+    	"outputs": [],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    },
+    {
+    	"constant": false,
+    	"inputs": [
+    	{
+    		"name": "_to",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_value",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "transfer",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "bool"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    },
+    {
+    	"constant": false,
+    	"inputs": [
+    	{
+    		"name": "_from",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_to",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_value",
+    		"type": "uint256"
+    	}
+    	],
+    	"name": "transferFrom",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "bool"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [
+    	{
+    		"name": "_owner",
+    		"type": "address"
+    	},
+    	{
+    		"name": "_spender",
+    		"type": "address"
+    	}
+    	],
+    	"name": "allowance",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "uint256"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [
+    	{
+    		"name": "_owner",
+    		"type": "address"
+    	}
+    	],
+    	"name": "balanceOf",
+    	"outputs": [
+    	{
+    		"name": "balance",
+    		"type": "uint256"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [],
+    	"name": "decimals",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "uint8"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [],
+    	"name": "INITIAL_SUPPLY",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "uint256"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [],
+    	"name": "name",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "string"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [],
+    	"name": "symbol",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "string"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": true,
+    	"inputs": [],
+    	"name": "totalSupply",
+    	"outputs": [
+    	{
+    		"name": "",
+    		"type": "uint256"
+    	}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    }
+    ]);
 
-	var KNUInstance = KNU.at("0x42579d4badf45cedfa2184870d49480f71433834");
+var KNUInstance = KNU.at("0x42579d4badf45cedfa2184870d49480f71433834");
+var string="";
+
+
+var my_tbody = document.getElementById('my_tbody');
+
+
+//document.write("<table>");
+$.getJSON(API, function (json) {
+     for (i=0; i<10; i++)
+     {
+        var my_tbody = document.getElementById('my_tbody');
+          var row = my_tbody.insertRow(my_tbody.rows.length);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+
+     time = json.result[i].timeStamp;
+
+     cell1.innerHTML=time;
+
+     from = json.result[i].from;
+     cell2.innerHTML=from;
+
+     to = json.result[i].to;
+     cell3.innerHTML=to;
+
+     amount = json.result[i].value;
+     cell4.innerHTML=amount;
+
+     index += 1;
+     cell5.innerHTML=index;
+
+ }
+});
+//document.write("</table>");
 
 /*    var wallet = web3.eth.getAccounts(function(e,r){
         console.log(r);
@@ -477,39 +526,39 @@
 	})
 }*/
 
-function showBalances(){
-	var wallet1 = accounts[0];
-	var wallet2 = accouts[1];
+// function showBalances(){
+// 	var wallet1 = accounts[0];
+// 	var wallet2 = accouts[1];
 
-	var coin1 = KNUInstance.balanceOf(wallet1);
-	var coin2 = KNUInstance.balanceOf(wallet2);
+// 	var coin1 = KNUInstance.balanceOf(wallet1);
+// 	var coin2 = KNUInstance.balanceOf(wallet2);
 
-	var list = coin1 + '<br>'+ coin2 + '<br>';
+// 	var list = coin1 + '<br>'+ coin2 + '<br>';
 
-	document.getElementById('h1').innerHTML=list;
-}
+// 	document.getElementById('h1').innerHTML=list;
+// }
 
-function sendTransaction(){
-	//web3.personal.unlockAccount("0x..", "<passs>", 1000);
-	//KNUInstance.transfer.sendTransaction(from_account, to_account, 20000,  {from:accounts[0], gas:1000000});
-}
+// function sendTransaction(){
+// 	//web3.personal.unlockAccount("0x..", "<passs>", 1000);
+// 	//KNUInstance.transfer.sendTransaction(from_account, to_account, 20000,  {from:accounts[0], gas:1000000});
+// }
 
 
-    //  web3.eth.getAccounts(function(e,r){
-    //     console.log(r);
-    // });
-    // console.log(KNUInstance.balan)
+//     //  web3.eth.getAccounts(function(e,r){
+//     //     console.log(r);
+//     // });
+//     // console.log(KNUInstance.balan)
 
-   // KNUInstance.setValue.sendTransaction("2018-07-06", 1000000, 5500000, "Daiso", "withdraw", {from : web3.eth.accounts[0], gas:11000000});
+//    // KNUInstance.setValue.sendTransaction("2018-07-06", 1000000, 5500000, "Daiso", "withdraw", {from : web3.eth.accounts[0], gas:11000000});
 
-    // KNUInstance.setValue.sendTransaction("2018-07-07", 50000000, 60500000, "Harry", "Deposit", {from : web3.eth.accounts[0], gas:11000000});
+//     // KNUInstance.setValue.sendTransaction("2018-07-07", 50000000, 60500000, "Harry", "Deposit", {from : web3.eth.accounts[0], gas:11000000});
 
-     var trans1 = KNUInstance.getValue(0);
-     console.log(trans1[2].c);
-	  document.getElementById('hi').innerHTML=trans1;
-     var trans2 = KNUInstance.getValue(1);
-     console.log(trans2);
-	  document.getElementById('hi2').innerHTML=trans2;
+//      var trans1 = KNUInstance.getValue(0);
+//      console.log(trans1[2].c);
+// 	  document.getElementById('hi').innerHTML=trans1;
+//      var trans2 = KNUInstance.getValue(1);
+//      console.log(trans2);
+// 	  document.getElementById('hi2').innerHTML=trans2;
 </script>
 
 </html>
