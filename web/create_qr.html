@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -10,7 +9,7 @@
     <script type="text/javascript" src="./web3/bower_components/web3/dist/web3.min.js"></script>
     <title>WALLET :: KNU COIN</title>
     <style>
-    
+
     .contents
     {
         float:left;
@@ -23,24 +22,27 @@
 </head>
 <body>
     <div class="contents" margin-left:500px>
-        <!-- <iFrame Name=mains width=1200px height=1000px Scrolling=no 
+        <!-- <iFrame Name=mains width=1200px height=1000px Scrolling=no
             MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame> -->
             <input id="address" type="text"  style="width:50%" /><br />
             <button onClick="createWallet()">Create Wallet</button><br/>
             <br>
-            <button onclick="makeCode()">Generate</button>
+            <button onclick="makeCode()">Generate</button><br>
             <br>
-            <div id="qrcode" style="width:100px; height:100px; margin-top:30px; margin-left:500px"></div>
+            <button onclick="downloadTxt('KNUCoinWallet.txt')">Download text version</button>
+            <br>
+
+            <div id="qrcode" style="width:200px; height:200px; margin-top:30px; margin-left:500px"></div>
+
             <script type="text/javascript">
                 var Web3 = require("web3");
                 web3 = new Web3(new Web3.providers.HttpProvider("http://54.145.119.133:8545"));
                 //web3.var={timeout:20000, headers:[{name:"Access-Control-Allow-Origin", value:"*"}]};
-                //web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/1eb664857f43421a8aad2450e1e5d324"));
-                //let web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io'));
                 var qrcode = new QRCode(document.getElementById("qrcode"), {
                     width : 200,
                     height : 200
                 });
+
                 function makeCode () {
                     var elText = document.getElementById("address");
                     if (!elText.value) {
@@ -51,7 +53,7 @@
                     qrcode.makeCode(elText.value);
                 }
                 function createWallet(){
-                    
+
                     var password;
                     var input = prompt("Please enter your password");
                     if (input==null || input==""){
@@ -65,7 +67,27 @@
                     var length = web3.eth.accounts.length-1;
                     console.log(web3.eth.accounts);
                     document.getElementById("address").value=web3.eth.accounts[length];
+                    download("lol.txt", "chuj");
                 }
+
+                function downloadTxt(filename) {
+                    var text = document.getElementById("address").value;
+                    var element = document.createElement('a');
+                    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                    element.setAttribute('download', filename);
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+                    element.click();
+                    document.body.removeChild(element);
+                  }
+
+                  function prepHref(linkElement) {
+                      var myDiv = document.getElementById('fullsized_image_holder');
+                      var myImage = myDiv.children[0];
+                      linkElement.href = myImage.src;
+                  }
+
+
             </script>
 
         </div>
