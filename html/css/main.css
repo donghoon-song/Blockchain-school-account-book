@@ -1,0 +1,44 @@
+.main_title
+{
+    width:100%;
+    text-align:center;
+    background:#2c2826;
+}
+.title{
+    display:inline-block;
+    width:95%;
+    padding-top:10px;
+    padding-bottom:30px;
+    text-align:left;
+}
+#logo{
+    float:left;
+}
+#logout{
+    padding-top:15px;
+    padding-right:20px;
+    float:right;
+}
+.main_menu{
+    background:#e9e9e9;
+    width:100%;
+    padding-top:100px;
+    padding-bottom:70px;
+    text-align:center;
+}
+.menu{
+    display:inline-block;
+    width:100%;
+    text-align:left;
+}
+.main_menu ul
+{
+    list-style:none;
+    text-align:center;
+}
+.main_menu ul li
+{
+    display:inline-block;
+    padding-right:20px;
+    padding-bottom:30px;
+}
