@@ -20,11 +20,10 @@ Each block will consist of information about a single transaction, these are: <b
   -next block<br>
   -hash of previous block<br><br>
   
-**2. Web application**
+**2. Implementation**
 
-There are two kinds of web applications.
-- the application to make transactions
-- the application to track transactions records and see
+We developed blockchain cryptocurrency with a use of Etherium system. Smart contracts are created in Solidity.
+To manage wallet and transactions user can use our web3-driven website.
 
 **2-1. Transaction process
 
@@ -36,16 +35,5 @@ Then the sender will scan it and access to web application. From QR code, the se
 With our webpage with web3.js, we can track all the transaction records. And we will map some important addresses to their users' names(Student council members). So that we can track their records using their names.<br>
 
 **3. Node Composition
-
-**3.Student council web application**
-
-
-When a transaction is done a member of student council is supposed to upload a scan of the receipt to the server. Then the web app is supposed to add a new block to blockchain and send it to all students. Someone (a miner, probably every student) needs to verify all previous blocks of the new blockchain. If they are correct then a new blockchain is accepted and everyone will download it to his app.<br><br>
- 
- 
-**4.Each student application**
-
-
-Stores a blockchain, verifies new ones and downloads them. If there is a difference between new blockchain and a stored one the app should display alert to the user and allow him to contact student council.<br><br>
 
 
