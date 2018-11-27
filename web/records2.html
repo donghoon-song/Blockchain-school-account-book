@@ -49,8 +49,8 @@
 	}
 </style>
 
-<link rel="stylesheet" type="text/css" href="css/util.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/util.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
 <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -114,19 +114,24 @@
 										<thead>
 
 											<tr class="row100 head">
-												<th class="cell100 column1">Time</th>
+												<!-- <th class="cell100 column1">Time</th>
 												<th class="cell100 column2">from</th>
 												<th class="cell100 column3">to</th>
 												<th class="cell100 column4">amount</th>
-												<th class="cell100 column5">index</th>
+												<th class="cell100 column5">index</th> -->
+                                                <th>Time</th>
+                                                <th>from</th>
+                                                <th>To</th>
+                                                <th>Amount</th>
+                                                <th>Index</th>
 											</tr>
 										</thead>
-                                    </table>
-                                    <table>
+                                <!--     </table>
+                                    <table> -->
 										<!--테이블 헤더-->
 										<tbody id = "my_tbody"></tbody>
 									</table>
-								</div>
+								<!-- </div> -->
 
 									<!--
 									<tbody>
@@ -160,7 +165,7 @@
 										-->
       <!--  <iFrame Name=mains width=1200px height=1000px Scrolling=no src="about.html"
       	MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame>-->
-      </div>
+      <!-- </div> -->
   </body>
 
   <script>
@@ -171,7 +176,7 @@
     		var web3 = new Web3(new Web3.providers.HttpProvider());
     		var version = web3.version.api;
     		var API = 'https://api-ropsten.etherscan.io/api?module=account&action=tokentx&contractaddress=0x42579d4badf45cedfa2184870d49480f71433834&address=0xf7cb0Fd4e158b86c561b2a9D053Af87639079396&page=1&offset=100&sort=asc&apikey=YourApiKeyToken';
-    		var time, from, to, amout;
+    		var time, from, to, amount;
     		var index = 0;
   // // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   // if (typeof web3 !== 'undefined') {
@@ -191,297 +196,288 @@
 
     var KNU = web3.eth.contract([
     {
-    	"anonymous": false,
-    	"inputs": [
-    	{
-    		"indexed": true,
-    		"name": "from",
-    		"type": "address"
-    	},
-    	{
-    		"indexed": true,
-    		"name": "to",
-    		"type": "address"
-    	},
-    	{
-    		"indexed": false,
-    		"name": "value",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "Transfer",
-    	"type": "event"
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_add",
+                "type": "address"
+            }
+        ],
+        "name": "Freecoin",
+        "outputs": [],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "nonpayable"
     },
     {
-    	"constant": false,
-    	"inputs": [
-    	{
-    		"name": "_spender",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_value",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "approve",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "bool"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "nonpayable",
-    	"type": "function"
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_id",
+                "type": "string"
+            }
+        ],
+        "name": "setID",
+        "outputs": [],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "nonpayable"
     },
     {
-    	"anonymous": false,
-    	"inputs": [
-    	{
-    		"indexed": true,
-    		"name": "owner",
-    		"type": "address"
-    	},
-    	{
-    		"indexed": true,
-    		"name": "spender",
-    		"type": "address"
-    	},
-    	{
-    		"indexed": false,
-    		"name": "value",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "Approval",
-    	"type": "event"
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_name",
+                "type": "string"
+            }
+        ],
+        "name": "setwalletname",
+        "outputs": [],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "nonpayable"
     },
     {
-    	"constant": false,
-    	"inputs": [
-    	{
-    		"name": "_spender",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_subtractedValue",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "decreaseApproval",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "bool"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "nonpayable",
-    	"type": "function"
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_from",
+                "type": "address"
+            },
+            {
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "transfer",
+        "outputs": [],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "nonpayable"
     },
     {
-    	"constant": false,
-    	"inputs": [
-    	{
-    		"name": "_spender",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_addedValue",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "increaseApproval",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "bool"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "nonpayable",
-    	"type": "function"
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "value",
+                "type": "uint256"
+            }
+        ],
+        "name": "Transfer",
+        "type": "event"
     },
     {
-    	"constant": false,
-    	"inputs": [],
-    	"name": "SimpleToken",
-    	"outputs": [],
-    	"payable": false,
-    	"stateMutability": "nonpayable",
-    	"type": "function"
+        "inputs": [
+            {
+                "name": "_supply",
+                "type": "uint256"
+            },
+            {
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "name": "_symbol",
+                "type": "string"
+            },
+            {
+                "name": "_decimals",
+                "type": "uint8"
+            }
+        ],
+        "type": "constructor",
+        "payable": true,
+        "stateMutability": "payable"
     },
     {
-    	"constant": false,
-    	"inputs": [
-    	{
-    		"name": "_to",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_value",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "transfer",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "bool"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "nonpayable",
-    	"type": "function"
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": false,
-    	"inputs": [
-    	{
-    		"name": "_from",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_to",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_value",
-    		"type": "uint256"
-    	}
-    	],
-    	"name": "transferFrom",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "bool"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "nonpayable",
-    	"type": "function"
+        "constant": true,
+        "inputs": [],
+        "name": "decimals",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [
-    	{
-    		"name": "_owner",
-    		"type": "address"
-    	},
-    	{
-    		"name": "_spender",
-    		"type": "address"
-    	}
-    	],
-    	"name": "allowance",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "uint256"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "freecoin",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [
-    	{
-    		"name": "_owner",
-    		"type": "address"
-    	}
-    	],
-    	"name": "balanceOf",
-    	"outputs": [
-    	{
-    		"name": "balance",
-    		"type": "uint256"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_add",
+                "type": "address"
+            }
+        ],
+        "name": "getBalance",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [],
-    	"name": "decimals",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "uint8"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "id",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [],
-    	"name": "INITIAL_SUPPLY",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "uint256"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [],
-    	"name": "name",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "string"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [],
-    	"name": "symbol",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "string"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     },
     {
-    	"constant": true,
-    	"inputs": [],
-    	"name": "totalSupply",
-    	"outputs": [
-    	{
-    		"name": "",
-    		"type": "uint256"
-    	}
-    	],
-    	"payable": false,
-    	"stateMutability": "view",
-    	"type": "function"
+        "constant": true,
+        "inputs": [],
+        "name": "totalSupply",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "walletname",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "type": "function",
+        "stateMutability": "view"
     }
-    ]);
+]);
 
-var KNUInstance = KNU.at("0x42579d4badf45cedfa2184870d49480f71433834");
+var KNUInstance = KNU.at("0x0148ab69132042710dd6f0d29f093c0147dab116");
 var string="";
 
 
 var my_tbody = document.getElementById('my_tbody');
 
+// $("tbody").append("<tr class="'row100 body'">");
 
 //document.write("<table>");
 $.getJSON(API, function (json) {

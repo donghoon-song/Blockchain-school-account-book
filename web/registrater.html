@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+</script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+    <script type="text/javascript" src="./web3/bower_components/web3/dist/web3.min.js"></script>
+
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SIGN-UP AMPM</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+
+  </head>
+  <body>
+      <article class="container">
+        <div class="page-header">
+          <h1>회원가입 <small>Sign up</small></h1>
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <label for="InputId">아이디	(*)</label>
+              <input type="text" class="form-control" id="id" placeholder="아이디">
+              <button type="submit" class="btn btn-info" onclick="CheckId()">중복확인<i class="fa fa-check spaceLeft"></i></button>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">비밀번호	(*)</label>
+              <input type="password" class="form-control" id="password" placeholder="비밀번호">
+            </div>
+			
+            <div class="form-group">
+              <label for="InputPassword2">비밀번호 확인</label>
+              <input type="password" class="form-control" id="password2" placeholder="비밀번호 확인">
+              <p class="help-block">비밀번호 확인을 위해 다시 한번 입력 해 주세요</p>
+            </div>
+            <div class="form-group">
+              <label for="username">이름	(*)</label>
+              <input type="text" class="form-control" id="name" placeholder="이름을 입력해 주세요">
+            </div>
+                     
+			<div class="form-group">
+              <label for="InputEmail">이메일</label>
+              <input type="email" class="form-control" id="email" placeholder="이메일">
+            </div>
+
+            <div class="form-group">
+              <label for="InputEmail">지갑 주소</label>
+              <input type="text" class="form-control" id="wallet_addr" placeholder="지갑">
+              <button class="btn btn-info" onclick="createWallet()">지갑생성<i class="fa fa-check spaceLeft"></i></button>
+            </div>
+			
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-info" onclick="RegisterUser()">회원가입<i class="fa fa-check spaceLeft"></i></button>
+              <button type="submit" class="btn btn-warning" onclick="gotoPage('intro.html')">가입취소<i class="fa fa-times spaceLeft"></i></button>
+            </div>
+        </div>
+
+      </article>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+
+      
+	function CheckId(){
+
+		var id=document.getElementById("id").value;
+		if(id==""){
+			alert("ID를 입력하세요");
+			return;
+		}
+    
+	  var request = new XMLHttpRequest();
+	  var params = "?id=" + document.getElementById("id").value;
+	  request.open("GET", "join_chk.php" + params, true);
+    request.onreadystatechange = function () {
+      if (request.readyState == 4) 
+      { //서버로부터 응답상태
+          if (request.status == 200 || request.status == 0) 
+          {//200 : 웹 서버의 응답처리상태
+            var str = request.responseText;
+	  	      if (str == 0)
+            {
+	  				  alert("사용가능한 ID입니다.");
+	  		    }
+	  			  else
+            {
+	  		      alert("중복된 ID 입니다.");
+            }
+          
+          }
+      }
+
+	  }
+
+    request.send(null);
+
+	}
+  
+  </script>
+
+
+    <script>
+    function RegisterUser() {
+		if((document.getElementById("id").value == "") || (document.getElementById("password").value == "") || (document.getElementById("name").value == "")){
+			alert("필수항목(*)을 입력해주세요");
+			return;
+		}
+          if (document.getElementById("password").value == document.getElementById("password2").value) {
+              var request = new XMLHttpRequest();
+              var params = "?id=" + document.getElementById("id").value + "&password=" + document.getElementById("password").value
+                  + "&name=" + document.getElementById("name").value + "&email=" + document.getElementById("email").value
+                  + "&wallet_addr=" + document.getElementById("wallet_addr").value;
+           
+              request.open("GET", "insert.php" + params, true);
+              request.onreadystatechange = function () {
+                  if (request.readyState == 4) 
+                  { //서버로부터 응답상태
+                      if (request.status == 200 || request.status == 0) 
+                      {//200 : 웹 서버의 응답처리상태
+                          var str = request.responseText;
+                          if (str == "1") {
+                              alert("Success!!");
+                              location.replace('intro.html')
+                          }
+                          else {
+                              alert("중복된 ID입니다. ID 중복검사를 해주세요");
+                          }
+                      }
+                  }
+              }
+              request.send(null);
+          }
+          else {
+              alert("Passwords not same");
+          
+		}
+      }
+  </script>
+
+  <script>
+    function gotoPage(str)
+    {
+      location.replace(str);
+    }
+  </script>
+
+  <script>
+
+      var Web3 = require("web3");
+      web3 = new Web3(new Web3.providers.HttpProvider("http://54.145.119.133:8545"));
+    function createWallet(){
+
+                    // web3.eth.personal.newAccount(password).then(console.log);
+                    var newAccount = web3.personal.newAccount(document.getElementById("password").value);
+                    var length = web3.eth.accounts.length-1;
+                    console.log(web3.eth.accounts);
+                    document.getElementById("wallet_addr").value=web3.eth.accounts[length];
+                }
+  </script>
+
+
+
+ <iframe src="" id="ifrm1" scrolling=no frameborder=no width=0 height=0 name="ifrm1"></iframe> 
+  </body>
+</html>

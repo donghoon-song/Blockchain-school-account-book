@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
+
+.button {
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    background: #3b8f77;
+    padding: 8px 25px 8px 25px;
+    text-decoration: none;
+}
+  
+.button:hover {
+  text-decoration: none;
+}
+.logout{
+  position:relative;
+  padding-top:20px;
+  padding-right:20px;
+  padding-bottom:10px;
+  font-size:20px;
+  color:#ffffff;
+  font-weight:200;
+}
+a.button{
+    margin-left:5px;
+}
+.b2
+{
+    background:#e7b52c;
+}
+.logout
+{
+    float:right;
+    text-align:right;
+}

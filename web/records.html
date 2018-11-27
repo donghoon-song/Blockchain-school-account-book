@@ -4,69 +4,33 @@
 <head>
     <meta charset="utf-8">
     <title>RECORDS :: KNU COIN</title>
-    <style>
-        .home
-        {
-            float:right;
-            width:100%;
-            padding-top:20px;
-            text-align:right;
-        }
-        .banner
-        {
-            float:center;
-            width:1200px;
-            margin:0 auto;
-            text-align:center;
-        }
-        .rec_menu
-        {
-            float:left;
-            width:1200px;
-            margin:0 auto;
-            text-align:center;
-        }
-        .rec_menu ul
-        {
-            list-style:none;
-        }
-        .rec_menu ul li
-        {
-            display:inline-block;
-
-        }
-        .contents
-        {
-            float:left;
-            width:100%;
-            margin:0 auto;
-            text-align:center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/intro.css">
+    <link rel="stylesheet" type="text/css" href="css/component.css">
 </head>
 
 <body>
-    <span class="home">
-         <a href="setup-finish.html">
-            <img src="images/main/gotomain.png" alt="gotoMain">
-        </a>
-    </span>
-    <div class="banner">
+    <div class="main_title">
+            <div class="login">
+                    <ul id="sign_set">
+                        <li class="login">
+                            <a href="login/logout.php">
+                                <img src="images/main/logout.png" alt="login">
+                            </a>
+                        </li>
+                        <li class="sign_up">
+                            <a href="main.php">
+                                <img src="images/main/gotomain.png" alt="gotohome">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
         <div class="title">
-            <h1>
-                <a href="records.html">
-                    <img src="images/records/records_title.png" alt="KNU RECORDS">
-                </a>
-            </h1>
-           
+            <a href="records.html">
+                <img src="images/records/records_title.png" alt="KNU RECORDS">
+            </a>
         </div>
         <div class="rec_menu">
             <ul>
-                <li id="about">
-                    <a target=mains href="about.html">
-                        <img src="images/records/about.png" alt="ABOUT">
-                    </a>
-                </li>
                 <li id="search record">
                     <a target=mains href="search.html">
                         <img src="images/records/search_records.png" alt="SEARCH RECORD">
@@ -91,7 +55,7 @@
         </div>
     </div>
     <div class="contents">
-        <iFrame Name=mains width=1200px height=1000px Scrolling=no src="about.html"
+        <iFrame Name=mains width="100%" height=1000px Scrolling=no src="about.html"
          MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame>
     </div>
 </body>
