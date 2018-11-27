@@ -1,0 +1,386 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+        .contents
+        {
+            float:center;
+            width:100%;
+            margin:0 auto;
+            text-align:left;
+        }
+        .input
+        {
+            padding-top: 50px;
+            padding-left: 100px;
+            font-size : 20px;
+        }
+        .button
+        {
+            padding-left: 100px;
+            font-size : 15px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="contents">
+           <div class="input">
+            <form>
+                ADDRESS<br>
+                <input type="text" name="userid"><br><br>
+                    
+                AMOUNT OF COINS<br>
+                <input type="number" name="pwd" maxlength='5'><br>
+            </form>
+            </div>
+            <br>
+            <div class="button">
+                <form action="a.html">
+                <input type="button" name="sending_button" value="SEND COINS" onclick="alert('COMPLETE')">
+            </div>
+            <br>
+        </div>
+    </body>
+
+     <script>
+            var Web3 = require('web3');
+            web3 = new Web3(new Web3.providers.HttpProvider("http://52.207.216.102:8545"));
+
+            var KNU = web3.eth.contract([
+    {
+        "anonymous": false,
+        "inputs": [
+        {
+            "indexed": true,
+            "name": "from",
+            "type": "address"
+        },
+        {
+            "indexed": true,
+            "name": "to",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "name": "value",
+            "type": "uint256"
+        }
+        ],
+        "name": "Transfer",
+        "type": "event"
+    },
+    {
+        "constant": false,
+        "inputs": [
+        {
+            "name": "_spender",
+            "type": "address"
+        },
+        {
+            "name": "_value",
+            "type": "uint256"
+        }
+        ],
+        "name": "approve",
+        "outputs": [
+        {
+            "name": "",
+            "type": "bool"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+        {
+            "indexed": true,
+            "name": "owner",
+            "type": "address"
+        },
+        {
+            "indexed": true,
+            "name": "spender",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "name": "value",
+            "type": "uint256"
+        }
+        ],
+        "name": "Approval",
+        "type": "event"
+    },
+    {
+        "constant": false,
+        "inputs": [
+        {
+            "name": "_spender",
+            "type": "address"
+        },
+        {
+            "name": "_subtractedValue",
+            "type": "uint256"
+        }
+        ],
+        "name": "decreaseApproval",
+        "outputs": [
+        {
+            "name": "",
+            "type": "bool"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+        {
+            "name": "_spender",
+            "type": "address"
+        },
+        {
+            "name": "_addedValue",
+            "type": "uint256"
+        }
+        ],
+        "name": "increaseApproval",
+        "outputs": [
+        {
+            "name": "",
+            "type": "bool"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "SimpleToken",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+        {
+            "name": "_to",
+            "type": "address"
+        },
+        {
+            "name": "_value",
+            "type": "uint256"
+        }
+        ],
+        "name": "transfer",
+        "outputs": [
+        {
+            "name": "",
+            "type": "bool"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+        {
+            "name": "_from",
+            "type": "address"
+        },
+        {
+            "name": "_to",
+            "type": "address"
+        },
+        {
+            "name": "_value",
+            "type": "uint256"
+        }
+        ],
+        "name": "transferFrom",
+        "outputs": [
+        {
+            "name": "",
+            "type": "bool"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+        {
+            "name": "_owner",
+            "type": "address"
+        },
+        {
+            "name": "_spender",
+            "type": "address"
+        }
+        ],
+        "name": "allowance",
+        "outputs": [
+        {
+            "name": "",
+            "type": "uint256"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+        {
+            "name": "_owner",
+            "type": "address"
+        }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+        {
+            "name": "balance",
+            "type": "uint256"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "decimals",
+        "outputs": [
+        {
+            "name": "",
+            "type": "uint8"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "INITIAL_SUPPLY",
+        "outputs": [
+        {
+            "name": "",
+            "type": "uint256"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+        {
+            "name": "",
+            "type": "string"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+        {
+            "name": "",
+            "type": "string"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "totalSupply",
+        "outputs": [
+        {
+            "name": "",
+            "type": "uint256"
+        }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+    ]);
+
+var KNUInstance = KNU.at("0x42579d4badf45cedfa2184870d49480f71433834");
+
+/*    var wallet = web3.eth.getAccounts(function(e,r){
+        console.log(r);
+    });
+    console.log(wallet);
+
+    function showAccounts(){
+    web3.eth.getAccounts(function(e,r){
+        document.getElementById('accounts').innerHTML = r;
+    })
+}*/ 
+
+// function showBalances(){
+//  var wallet1 = accounts[0];
+//  var wallet2 = accouts[1];
+
+//  var coin1 = KNUInstance.balanceOf(wallet1);
+//  var coin2 = KNUInstance.balanceOf(wallet2);
+
+//  var list = coin1 + '<br>'+ coin2 + '<br>';
+
+//  document.getElementById('h1').innerHTML=list;
+// }
+
+// function sendTransaction(){
+//  //web3.personal.unlockAccount("0x..", "<passs>", 1000);
+//  //KNUInstance.transfer.sendTransaction(from_account, to_account, 20000,  {from:accounts[0], gas:1000000});
+// }
+
+
+//     //  web3.eth.getAccounts(function(e,r){
+//     //     console.log(r);
+//     // });
+//     // console.log(KNUInstance.balan)
+
+//    // KNUInstance.setValue.sendTransaction("2018-07-06", 1000000, 5500000, "Daiso", "withdraw", {from : web3.eth.accounts[0], gas:11000000});
+
+//     // KNUInstance.setValue.sendTransaction("2018-07-07", 50000000, 60500000, "Harry", "Deposit", {from : web3.eth.accounts[0], gas:11000000});
+
+//      var trans1 = KNUInstance.getValue(0);
+//      console.log(trans1[2].c);
+//    document.getElementById('hi').innerHTML=trans1;
+//      var trans2 = KNUInstance.getValue(1);
+//      console.log(trans2);
+//    document.getElementById('hi2').innerHTML=trans2;
+</script>
+
+</html>
