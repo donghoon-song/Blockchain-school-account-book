@@ -27,7 +27,7 @@ if(!isset($_SESSION['username']))
             <a class="button b2" href="main.php">home</a>
         </div>
         <div class="title">
-            <a href="records.html">
+            <a href="records.php">
                 <img src="images/records/records_title.png" alt="KNU RECORDS">
             </a>
         </div>
@@ -57,7 +57,7 @@ if(!isset($_SESSION['username']))
         </div>
     </div>
     <div class="contents">
-        <iFrame Name=mains width="100%" height=1000px Scrolling=no src="qna.html"
+        <iFrame Name=mains width="90%" height=1000px Scrolling=no src="search.html"
          MarginWidth=0 MarginHeight=0 FrameBorder=0></iFrame>
     </div>
 </body>

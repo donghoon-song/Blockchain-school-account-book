@@ -34,40 +34,45 @@ function debug_to_console( $data ) {
     <link rel="stylesheet" href="css/button.css">
     
     <style>
-        body{
-            
-        }
         .contents{
             padding-top:100px;
+            background:#e9e9e9;
+            width:100%;
+            text-align:center;
+            padding-bottom:50px;
         }
         input{
             margin-bottom:10px;
         }
         button{
+            width:130px;
+            height:50px;
             -webkit-border-radius: 13;
             -moz-border-radius: 13;
             border-radius: 13px;
             font-family: Arial;
             color: #ffffff;
             font-size: 20px;
-            background: #ff596f;
+            background: #3b8f77;
             padding: 10px 20px 10px 20px;
             text-decoration: none;
         }
         button:hover{
-            background: #f0243f;
+            background: #51b497;
             text-decoration: none;
         }
         input{
             background-image: linear-gradient(top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 50%);
-            border: 1px solid rgba(0, 0, 0, 0.16);
+            border: 0px solid rgba(0, 0, 0, 0.16);
             height: 45px;
-            padding: 5px 10px 5px 5px;
+            padding: 5px 10px 5px 10px;
             font-size: 15px;
             width: 60%;
             border-radius: 10px;
-            background:#faba3a;
+            background:#ffd562;
         }
+      
+       
         
     </style>
 
@@ -89,15 +94,17 @@ function debug_to_console( $data ) {
     </div>
     <!-- qrcode and balance -->
     <div class="contents">
-        <input id="address" type="text" placeholder="  버튼을 누르면 여기에 지갑주소가 표시됩니다"/><br>
-        <button onclick="makeCode()">Generate</button><br><br>
+        <button onclick="makeCode()">Generate</button>
+        <input id="address" type="text" placeholder="버튼을 누르면 여기에 지갑주소가 표시됩니다"/><br>
         <br>
-        <input id="balance" type="text" placeholder="   버튼을 누르면 여기에 잔고가 표시됩니다"/><br>
-        <button onclick="showBalances()">Show Balance</button>
-    </div>
+        <button onclick="showBalances()">Balance</button>
+        <input id="balance" type="text" placeholder="버튼을 누르면 여기에 잔고가 표시됩니다"/><br>
+    
 
         <br><br>
-        <div id="qrcode" style="margin-left:42vw"></div>
+        <div id="qrcode" style="margin-left:40vw">
+        </div>
+    </div>
 
         <script type="text/javascript">
               var Web3 = require('web3');
@@ -559,6 +566,12 @@ var KNUInstance = KNU.at("0xe18b6bdc73a11d104d356184434ff014656c220b");
 
 
           </script>
+
+
+           <div class="wallpaper">
+    <img src="images/wallet/wallet_wallpaper.png" style='width: 100%; object-fit: contain'/>
+    <img src="images/wallet/wallet_wallpaper2.png" style='width: 100%; object-fit: contain'/>
+    </div>
       </body>
 
       </html>

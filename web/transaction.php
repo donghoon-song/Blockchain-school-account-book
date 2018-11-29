@@ -25,79 +25,102 @@ function debug_to_console( $data ) {
         <script type="text/javascript" src="./web3/bower_components/web3/dist/web3.min.js"></script>
         <title>TRANSACTION :: KNU COIN</title>
         <link rel="stylesheet" type="text/css" href="css/component_n.css">
+        <link rel="stylesheet" href="css/button.css">
         <style>
         .contents
         {
-            float:center;
+            padding-top:100px;
+            background:#e9e9e9;
             width:100%;
-            margin:0 auto;
+            padding-bottom:50px;
             text-align:left;
         }
-        .input
+        
+        .input input
         {
-            padding-top: 50px;
-            padding-left: 100px;
-            font-size : 20px;
+            background-image: linear-gradient(top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 50%);
+            border: 0px solid rgba(0, 0, 0, 0.16);
+            height: 45px;
+            padding: 5px 10px 5px 10px;
+            margin-bottom:10px;
+            font-size: 15px;
+            width: 520px;
+            border-radius: 10px;
+            background:#ffd562;
         }
-        .button
+        .buttons{
+            margin-left:90px;
+        }
+        .buttons input
         {
-            padding-left: 100px;
-            font-size : 15px;
+            margin-right: 10px;
+            width:170px;
+            height:50px;
+            -webkit-border-radius: 13;
+            -moz-border-radius: 13;
+            border-radius: 13px;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 15px;
+            background: #3b8f77;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        .buttons input:hover{
+            background: #51b497;
+            text-decoration: none;
+        }
+        .box{
+            margin-left:90px;
         }
     </style>
     </head>
     <body onload="fillAdrress();makeCode();">
 
         <div class="main_title">
-                <div class="login">
-                        <ul id="sign_set">
-                            <li class="login">
-                                <a href="main.php">
-                                    <img src="images/main/logout.png" alt="login">
-                                </a>
-                            </li>
-                            <li class="sign_up">
-                                <a href="main.php">
-                                    <img src="images/main/gotomain.png" alt="gotohome">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="logout">
+                <?=$_SESSION['username']?>님
+                <a class="button" href="login/logout.php">logout</a>
+                <a class="button b2" href="main.php">home</a>
+            </div>
             <div class="title">
                 <a href="transaction.html">
                     <img src="images/transaction/trans_title.png" alt="TRANSACTION">
                 </a>
-            </h1>
+            </div>
         </div>
         <div class="contents">
-       <div class="input">
-        <form>
+            <div class="input">
+                <form class="box">
 
-            SENDER'S ADDRESS<br>
-            <input type="text" id="senderid"><br><br>
+                    SENDER'S ADDRESS<br>
+                    <input type="text" id="senderid"><br><br>
 
-            RECEIVER'S ADDRESS<br>
-            <input type="text" id="receiverid"><br><br>
+                    RECEIVER'S ADDRESS<br>
+                    <input type="text" id="receiverid"><br><br>
 
-            PASSWORD<br>
-            <input type="text" id="pws"><br><br>
+                    PASSWORD<br>
+                    <input type="text" id="pws"><br><br>
 
-            AMOUNT OF COINS<br>
-            <input type="number" id="amount" maxlength='5'><br>
+                    AMOUNT OF COINS<br>
+                    <input type="number" id="amount" maxlength='5'><br>
 
-            YOUR BALANCE<br>
-            <input type="number" id="balance"><br>
-        </form>
-    </div>
-    <br>
-    <div class="button">
-        <form action="a.html">
-            <input type="button" name="sending_button" value="SEND COINS" onclick="sendTransaction()">
-            <input type="button" name="balances_button" value="SHOW BALANCES" onclick="showBalances()">
-            <input type="button" name="Freecoin_button" value="FREE COINS" onclick="Freecoins()">
+                    YOUR BALANCE<br>
+                    <input type="number" id="balance"><br>
+                </form>
+            </div>
+            <br><br>
+            <div class="buttons">
+                <form action="a.html">
+                    <input type="button" name="sending_button" value="SEND COINS" onclick="sendTransaction()">
+                    <input type="button" name="balances_button" value="SHOW BALANCES" onclick="showBalances()">
+                    <input type="button" name="Freecoin_button" value="FREE COINS" onclick="Freecoins()">
+                </form>
+            </div>
         </div>
-    </div>
-    <br>
+        <div class="wall">
+        <img src="images/transaction/wallpaper.png" style='width: 100%; object-fit: contain'/>
+        </div>
     </body>
 
 

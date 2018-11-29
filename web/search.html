@@ -10,53 +10,53 @@
     <title>RECORDS :: KNU COIN</title>
     <style>
 
-        .contents
-        {
-            float:left;
-            width:100%;
-            margin:0 auto;
-            text-align:center;
-            list-style : none;
-        }
+    .contents
+    {
+        float:left;
+        width:100%;
+        margin:0 auto;
+        text-align:center;
+        list-style : none;
+    }
 
-        .home
-	{
-		float:right;
-		width:100%;
-		padding-top:20px;
-		padding-right:80px;
-		text-align:right;
-	}
-	.title
-	{
-		float:left;
-		width:100%;
-		margin:0 auto;
-		text-align:center;
-	}
-	.rec_menu
-	{
-		float:left;
-		width:100%;
-		margin:0 auto;
-		text-align:center;
-	}
-	.rec_menu ul
-	{
-		list-style:none;
-	}
-	.rec_menu ul li
-	{
-		display:inline-block;
+    .home
+    {
+      float:right;
+      width:100%;
+      padding-top:20px;
+      padding-right:80px;
+      text-align:right;
+  }
+  .title
+  {
+      float:left;
+      width:100%;
+      margin:0 auto;
+      text-align:center;
+  }
+  .rec_menu
+  {
+      float:left;
+      width:100%;
+      margin:0 auto;
+      text-align:center;
+  }
+  .rec_menu ul
+  {
+      list-style:none;
+  }
+  .rec_menu ul li
+  {
+      display:inline-block;
 
-	}
-	.contents
-	{
-		float:left;
-		width:100%;
-		margin:0 auto;
-		text-align:center;
-    </style>
+  }
+  .contents
+  {
+      float:left;
+      width:100%;
+      margin:0 auto;
+      text-align:center;
+  </style>
 
     <!-- <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -67,19 +67,19 @@
 
     <div class="contents">
 
-		<li><div id="hi"><br></li>
-			<li> <div id="hi2"></li>
+      <li><div id="hi"><br></li>
+         <li> <div id="hi2"></li>
 
-				<div class="limiter">
-					<div class="container-table100">
-						<div class="wrap-table100">
-							<div class="table100 ver1 m-b-110">
-								<div class="table100-head">
-									<table>
-										<!--테이블 헤더-->
-										<thead>
+            <div class="limiter">
+               <div class="container-table100">
+                  <div class="wrap-table100">
+                     <div class="table100 ver1 m-b-110">
+                        <div class="table100-head">
+                           <table>
+                              <!--테이블 헤더-->
+                              <thead>
 
-											<tr class="row100 head">
+                                 <tr class="row100 head">
 												<!-- <th class="cell100 column1">Sender</th>
 												<th class="cell100 column2">Receiver</th>
 												<th class="cell100 column3">Amount</th>
@@ -90,394 +90,394 @@
                                                 <th>Amount</th>
                                                 <th>Time</th>
                                                 <th>Hash</th>
-											</tr>
-										</thead>
+                                            </tr>
+                                        </thead>
 
-										<tbody id = "my_tbody"></tbody>
-									</table>
+                                        <tbody id = "my_tbody"></tbody>
+                                    </table>
 
-  </body>
+                                </body>
 
-    <script>
-
-
-
-var Web3 = require('web3');
-           web3 = new Web3(new Web3.providers.HttpProvider("http://54.145.119.133:8545"));
-    		var version = web3.version.api;
-    		var API = 'https://api-ropsten.etherscan.io/api?module=account&action=tokentx&contractaddress=0x42579d4badf45cedfa2184870d49480f71433834&address=0xf7cb0Fd4e158b86c561b2a9D053Af87639079396&page=1&offset=100&sort=asc&apikey=YourApiKeyToken';
+                                <script>
 
 
-    
-            var KNU = web3.eth.contract([
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "walletname",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "totalSupply",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "symbol",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "owner",
-        "outputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "name",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "id",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            }
-        ],
-        "name": "getwalletname",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            }
-        ],
-        "name": "getID",
-        "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            }
-        ],
-        "name": "getBalance",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "free",
-        "outputs": [
-            {
-                "name": "",
-                "type": "int8"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "decimals",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint8"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "blacklist",
-        "outputs": [
-            {
-                "name": "",
-                "type": "int8"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": true,
-        "inputs": [
-            {
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "balanceOf",
-        "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "view"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            }
-        ],
-        "name": "Freecoin",
-        "outputs": [],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "nonpayable"
-    },
-    {
-        "anonymous": false,
-        "inputs": [
-            {
-                "indexed": true,
-                "name": "from",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "name": "to",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "value",
-                "type": "uint256"
-            }
-        ],
-        "name": "Transfer",
-        "type": "event"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            }
-        ],
-        "name": "blacklisting",
-        "outputs": [],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "nonpayable"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            }
-        ],
-        "name": "deleteFromBlacklist",
-        "outputs": [],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "nonpayable"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            },
-            {
-                "name": "_id",
-                "type": "string"
-            }
-        ],
-        "name": "setID",
-        "outputs": [],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "nonpayable"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_add",
-                "type": "address"
-            },
-            {
-                "name": "_name",
-                "type": "string"
-            }
-        ],
-        "name": "setwalletname",
-        "outputs": [],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "nonpayable"
-    },
-    {
-        "constant": false,
-        "inputs": [
-            {
-                "name": "_from",
-                "type": "address"
-            },
-            {
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-        ],
-        "name": "transfer",
-        "outputs": [],
-        "payable": false,
-        "type": "function",
-        "stateMutability": "nonpayable"
-    },
-    {
-        "inputs": [
-            {
-                "name": "_supply",
-                "type": "uint256"
-            },
-            {
-                "name": "_name",
-                "type": "string"
-            },
-            {
-                "name": "_symbol",
-                "type": "string"
-            },
-            {
-                "name": "_decimals",
-                "type": "uint8"
-            }
-        ],
-        "type": "constructor",
-        "payable": true,
-        "stateMutability": "payable"
-    }
-]);
+
+                                    var Web3 = require('web3');
+                                    web3 = new Web3(new Web3.providers.HttpProvider("http://54.145.119.133:8545"));
+                                    var version = web3.version.api;
+                                    var API = 'https://api-ropsten.etherscan.io/api?module=account&action=tokentx&contractaddress=0x42579d4badf45cedfa2184870d49480f71433834&address=0xf7cb0Fd4e158b86c561b2a9D053Af87639079396&page=1&offset=100&sort=asc&apikey=YourApiKeyToken';
+
+
+
+                                    var KNU = web3.eth.contract([
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "walletname",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [],
+                                        "name": "totalSupply",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "uint256"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [],
+                                        "name": "symbol",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [],
+                                        "name": "owner",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [],
+                                        "name": "name",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "id",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "getwalletname",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "getID",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "getBalance",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "uint256"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "free",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "int8"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [],
+                                        "name": "decimals",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "uint8"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "blacklist",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "int8"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": true,
+                                        "inputs": [
+                                        {
+                                            "name": "",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "balanceOf",
+                                        "outputs": [
+                                        {
+                                            "name": "",
+                                            "type": "uint256"
+                                        }
+                                        ],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "view"
+                                    },
+                                    {
+                                        "constant": false,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "Freecoin",
+                                        "outputs": [],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "nonpayable"
+                                    },
+                                    {
+                                        "anonymous": false,
+                                        "inputs": [
+                                        {
+                                            "indexed": true,
+                                            "name": "from",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "indexed": true,
+                                            "name": "to",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "indexed": false,
+                                            "name": "value",
+                                            "type": "uint256"
+                                        }
+                                        ],
+                                        "name": "Transfer",
+                                        "type": "event"
+                                    },
+                                    {
+                                        "constant": false,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "blacklisting",
+                                        "outputs": [],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "nonpayable"
+                                    },
+                                    {
+                                        "constant": false,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        }
+                                        ],
+                                        "name": "deleteFromBlacklist",
+                                        "outputs": [],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "nonpayable"
+                                    },
+                                    {
+                                        "constant": false,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "name": "_id",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "name": "setID",
+                                        "outputs": [],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "nonpayable"
+                                    },
+                                    {
+                                        "constant": false,
+                                        "inputs": [
+                                        {
+                                            "name": "_add",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "name": "_name",
+                                            "type": "string"
+                                        }
+                                        ],
+                                        "name": "setwalletname",
+                                        "outputs": [],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "nonpayable"
+                                    },
+                                    {
+                                        "constant": false,
+                                        "inputs": [
+                                        {
+                                            "name": "_from",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "name": "_to",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "name": "_value",
+                                            "type": "uint256"
+                                        }
+                                        ],
+                                        "name": "transfer",
+                                        "outputs": [],
+                                        "payable": false,
+                                        "type": "function",
+                                        "stateMutability": "nonpayable"
+                                    },
+                                    {
+                                        "inputs": [
+                                        {
+                                            "name": "_supply",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "name": "_name",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "name": "_symbol",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "name": "_decimals",
+                                            "type": "uint8"
+                                        }
+                                        ],
+                                        "type": "constructor",
+                                        "payable": true,
+                                        "stateMutability": "payable"
+                                    }
+                                    ]);
 
 var KNUInstance = KNU.at("0xe18b6bdc73a11d104d356184434ff014656c220b");
 var string="";
@@ -487,44 +487,52 @@ var my_tbody = document.getElementById('my_tbody');
 
 
 let blockNum = 980;
+web3.eth.defaultAccount = web3.eth.accounts[0];
+web3.personal.unlockAccount(web3.eth.accounts[0], "abc", 1000);
+KNUInstance.setID("0xa72e1109d4799f19d739abc858eb061f5ae32aaf", "Sangmin");
+KNUInstance.setID("0x7097f41f1c1847d52407c629d0e0ae0fdd24fd58", "Seungmin");
 // var Web3 = require('web3');
 // web3 = new Web3(new Web3.providers.HttpProvider("http://54.145.119.133:8545"));
-let run = async () => {
-let addresses = {}
-while (true) {
-let blck = blockNum++
-let block = await web3.eth.getBlock(blck)
-if (!block)
-  break;
-if(block.transactions.length == 0)
-  continue;
-console.log('block', blck, 'transactions', block.transactions.length)
-for(let i = 0; i < block.transactions.length; i++) {
-  let tx = await web3.eth.getTransaction(block.transactions[i])
-  console.log("From " + tx.from + " to " + tx.to + " hash: " + tx.hash);
-  var my_tbody = document.getElementById('my_tbody');
-    var row = my_tbody.insertRow(my_tbody.rows.length);
-    let cell0 = row.insertCell(0);
-    let cell1 = row.insertCell(1);
-    let cell2 = row.insertCell(2);
-    let cell3 = row.insertCell(3);
-    let cell4 = row.insertCell(4);
-    cell0.innerHTML=tx.from;
-    cell1.innerHTML=tx.to;
-    cell2.innerHTML=tx.value;
-    cell3.innerHTML=convertTimestamp(block.timestamp);
-    cell4.innerHTML=tx.hash;
-}
+function run() {
+    let addresses = {}
+    while (true) {
+        let blck = blockNum++
+        let block = web3.eth.getBlock(blck)
+        if (!block)
+          break;
+      if(block.transactions.length == 0)
+          continue;
+      console.log('block', blck, 'transactions', block.transactions.length)
+      for(let i = 0; i < block.transactions.length; i++) {
+          let tx = web3.eth.getTransaction(block.transactions[i])
+          console.log("From " + KNUInstance.getID(tx.from) + " to " + KNUInstance.getID(tx.to) + " hash: " + tx.hash);
+          console.log(blck);
+          var my_tbody = document.getElementById('my_tbody');
+          var row = my_tbody.insertRow(my_tbody.rows.length);
+          let cell0 = row.insertCell(0);
+          let cell1 = row.insertCell(1);
+          let cell2 = row.insertCell(2);
+          let cell3 = row.insertCell(3);
+          let cell4 = row.insertCell(4);
+          cell0.innerHTML=KNUInstance.getID(tx.from);
+          cell1.innerHTML=KNUInstance.getID(tx.to);
+          cell2.innerHTML=tx.value/100000000000;
+          cell3.innerHTML=convertTimestamp(block.timestamp);
+          cell4.innerHTML=tx.hash;
+      }
+
+      if(blck>=995)
+        return;
+  }
+
 }
 
-
-}
 run();
 
 
 function convertTimestamp(timestamp) {
   var d = new Date(timestamp * 1000),	// Convert the passed timestamp to milliseconds
-		yyyy = d.getFullYear(),
+  yyyy = d.getFullYear(),
 		mm = ('0' + (d.getMonth() + 1)).slice(-2),	// Months are zero based. Add leading 0.
 		dd = ('0' + d.getDate()).slice(-2),			// Add leading 0.
 		hh = d.getHours(),
@@ -533,15 +541,15 @@ function convertTimestamp(timestamp) {
 		ampm = 'AM',
 		time;
 
-	if (hh > 12) {
-		h = hh - 12;
-		ampm = 'PM';
-	} else if (hh === 12) {
-		h = 12;
-		ampm = 'PM';
-	} else if (hh == 0) {
-		h = 12;
-	}
+       if (hh > 12) {
+          h = hh - 12;
+          ampm = 'PM';
+      } else if (hh === 12) {
+          h = 12;
+          ampm = 'PM';
+      } else if (hh == 0) {
+          h = 12;
+      }
 
 	// ie: 2013-02-18, 8:35 AM
 	time = yyyy + '-' + mm + '-' + dd + ', ' + h + ':' + min + ' ' + ampm;
